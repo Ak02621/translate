@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Traductor</title>
+    <style>
+        .dark-mode {
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="mn bx-moon" onclick="toggleDarkMode()"></button>
+<button id="detectLanguageBtn" class="detect-language active" style="position: absolute; top: 10px; right: 10px;">Detectar idioma</button>
+    <div class="container">
+        <div class="propiedad_traductor">
+            <ul class="nav_item">
+                <li>
+                    <select></select>
+                </li>
+                <div class="cambio">
+                    <li class="bx  bx-swap-horizontal"></li>
+                </div>
+                <li><select></select>
+                </li>
+            </ul>
+            <div class="write_box">
+                <div class="propiedad_desde">
+                    <textarea maxlength="5000" class="fromText" placeholder="Escribe aquí el texto.."></textarea>
+                    <div class="icons">
+                        <span class="bx  bx-volume-full desde" title="Reproducir"></span>
+                        <div class="codigo_extencion">0/5,000</div>
+                    </div>
+                </div>
+                <div class="property_trans">
+                    <textarea class="a_traducir" disabled></textarea>
+                    <div class="icons">
+                        <span class="bx  bx-volume-full a" title="Reproducir"></span>
+                        <span class="bx bx-clipboard-plus" title="Copiar"> </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="herramientas">
+            <button class="fa fa-file-alt" title="Descargar TXT" onclick="downloadTxt()"></button>
+            <button class="fa fa-file-pdf" title="Descargar PDF" onclick="downloadPdf()"></button>
+            <button class="bx  bx-eraser" title="Borrar texto" onclick="clearText() "></button>
+        </div>
+
+    </div>
+    <div id="clear_error" class="copy_error">No hay texto para limpiar</div>
+    <div id="notification" class="notification">Texto copiado con éxito</div>
+    <div id="copy_error" class="copy_error">No hay texto para copiar</div>
+    <div id="descarga_error" class="descarga_error">No hay texto para descargar</div>
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
+    <script src="languague.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
